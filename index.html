@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gen AI Learning Path | From Basics to Expert</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8fafc;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #6b46c1 0%, #4299e1 100%);
+        }
+        
+        .schedule-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .project-card {
+            transition: all 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .timeline-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -20px;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 20px;
+            background-color: #cbd5e0;
+        }
+        
+        .progress-bar {
+            transition: width 1s ease-in-out;
+        }
+        
+        .floating-btn {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="gradient-bg text-white shadow-lg">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <i class="fas fa-robot text-2xl"></i>
+                    <span class="text-xl font-bold">Gen AI Learning Path</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#schedule" class="hover:text-gray-200">Daily Schedule</a>
+                    <a href="#projects" class="hover:text-gray-200">Projects</a>
+                    <a href="#resources" class="hover:text-gray-200">Resources</a>
+                    <a href="#strategies" class="hover:text-gray-200">Strategies</a>
+                </div>
+                <button class="md:hidden focus:outline-none">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Daily Schedule Section -->
+    <section id="schedule" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Comprehensive Daily Learning Schedule</h2>
+            
+            <div class="mb-12">
+                <h3 class="text-2xl font-semibold mb-6 text-gray-700">Weekday Structure (Monday-Friday)</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Morning Block -->
+                    <div class="schedule-card bg-indigo-50 rounded-xl p-6 shadow-md transition duration-300">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-indigo-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-sun text-indigo-600 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-indigo-800">Morning Focus Block</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">6:00 AM - 9:30 AM</p>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <span class="bg-indigo-200 text-indigo-800 font-bold px-2 py-1 rounded text-sm mr-3">6:00-6:15</span>
+                                <span>Daily planning and review</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-indigo-200 text-indigo-800 font-bold px-2 py-1 rounded text-sm mr-3">6:15-7:30</span>
+                                <span>Deep learning (theory, documentation)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-indigo-200 text-indigo-800 font-bold px-2 py-1 rounded text-sm mr-3">7:30-7:45</span>
+                                <span>Mindful break (stretching, hydration)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-indigo-200 text-indigo-800 font-bold px-2 py-1 rounded text-sm mr-3">7:45-9:15</span>
+                                <span>Hands-on implementation practice</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-indigo-200 text-indigo-800 font-bold px-2 py-1 rounded text-sm mr-3">9:15-9:30</span>
+                                <span>Session review and note-taking</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Midday Block -->
+                    <div class="schedule-card bg-blue-50 rounded-xl p-6 shadow-md transition duration-300">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-laptop-code text-blue-600 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-blue-800">Implementation Block</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">11:00 AM - 1:30 PM</p>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <span class="bg-blue-200 text-blue-800 font-bold px-2 py-1 rounded text-sm mr-3">11:00-12:15</span>
+                                <span>Focused project work session I</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-blue-200 text-blue-800 font-bold px-2 py-1 rounded text-sm mr-3">12:15-12:45</span>
+                                <span>Lunch break with mental rest</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-blue-200 text-blue-800 font-bold px-2 py-1 rounded text-sm mr-3">12:45-1:30</span>
+                                <span>Troubleshooting and refinement</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Afternoon Block -->
+                    <div class="schedule-card bg-purple-50 rounded-xl p-6 shadow-md transition duration-300">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-purple-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-brain text-purple-600 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-purple-800">Advanced Block</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">2:00 PM - 6:30 PM</p>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <span class="bg-purple-200 text-purple-800 font-bold px-2 py-1 rounded text-sm mr-3">2:00-3:30</span>
+                                <span>Advanced implementation session I</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-purple-200 text-purple-800 font-bold px-2 py-1 rounded text-sm mr-3">3:30-3:45</span>
+                                <span>Active break (physical movement)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-purple-200 text-purple-800 font-bold px-2 py-1 rounded text-sm mr-3">3:45-5:15</span>
+                                <span>Advanced implementation session II</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-purple-200 text-purple-800 font-bold px-2 py-1 rounded text-sm mr-3">5:15-5:30</span>
+                                <span>Refreshment break</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-purple-200 text-purple-800 font-bold px-2 py-1 rounded text-sm mr-3">5:30-6:15</span>
+                                <span>Testing, debugging, documentation</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-purple-200 text-purple-800 font-bold px-2 py-1 rounded text-sm mr-3">6:15-6:30</span>
+                                <span>Daily reflection and planning</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div>
+                <h3 class="text-2xl font-semibold mb-6 text-gray-700">Weekend Structure</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Saturday -->
+                    <div class="schedule-card bg-green-50 rounded-xl p-6 shadow-md transition duration-300">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-green-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-calendar-day text-green-600 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-green-800">Saturday: Integration Day</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">9:00 AM - 1:15 PM (4 hours total)</p>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <span class="bg-green-200 text-green-800 font-bold px-2 py-1 rounded text-sm mr-3">9:00-10:30</span>
+                                <span>Weekly review and knowledge consolidation</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-green-200 text-green-800 font-bold px-2 py-1 rounded text-sm mr-3">10:30-10:45</span>
+                                <span>Break</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-green-200 text-green-800 font-bold px-2 py-1 rounded text-sm mr-3">10:45-12:15</span>
+                                <span>Addressing challenging concepts</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-green-200 text-green-800 font-bold px-2 py-1 rounded text-sm mr-3">12:15-1:15</span>
+                                <span>Project portfolio development</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Sunday -->
+                    <div class="schedule-card bg-yellow-50 rounded-xl p-6 shadow-md transition duration-300">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-yellow-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-bed text-yellow-600 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-yellow-800">Sunday: Rest Day</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Complete rest from technical work</p>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <span class="bg-yellow-200 text-yellow-800 font-bold px-2 py-1 rounded text-sm mr-3">Optional</span>
+                                <span>Light reading of AI news (max 1 hour)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-yellow-200 text-yellow-800 font-bold px-2 py-1 rounded text-sm mr-3">Evening</span>
+                                <span>30-minute preparation for upcoming week</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Timeline Section -->
+    <section id="projects" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Comprehensive Project Timeline</h2>
+            
+            <div class="relative">
+                <!-- Progress Bar -->
+                <div class="mb-12">
+                    <div class="flex justify-between mb-2">
+                        <span class="text-sm font-medium text-gray-700">Foundation</span>
+                        <span class="text-sm font-medium text-gray-700">Expert</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-4">
+                        <div id="progress-level" class="progress-bar bg-indigo-600 h-4 rounded-full" style="width: 0%"></div>
+                    </div>
+                    <div class="flex justify-between mt-2">
+                        <span class="text-xs text-gray-500">Week 1</span>
+                        <span class="text-xs text-gray-500">Week 30</span>
+                    </div>
+                </div>
+                
+                <!-- Timeline -->
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <!-- Foundation Phase -->
+                    <div class="timeline-item relative">
+                        <div class="project-card bg-white p-6 rounded-xl shadow-md border-l-4 border-green-500">
+                            <div class="flex items-center mb-4">
+                                <div class="bg-green-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-seedling text-green-600 text-xl"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-800">Foundation Phase</h3>
+                            </div>
+                            <p class="text-gray-600 mb-4">Weeks 1-2</p>
+                            <ul class="space-y-3 text-sm">
+                                <li class="flex items-start">
+                                    <span class="bg-green-200 text-green-800 font-bold px-2 py-1 rounded text-xs mr-3">W1</span>
+                                    <span>Environment Setup and API Foundations</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="bg-green-200 text-green-800 font-bold px-2 py-1 rounded text-xs mr-3">W2</span>
+                                    <span>Prompt Engineering Fundamentals</span>
+                                </li>
+                            </ul>
+                            <button onclick="showDetails('foundation')" class="mt-4 text-green-600 font-medium hover:text-green-800 transition duration-300">
+                                View Details <i class="fas fa-chevron-right ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Beginner Projects -->
+                    <div class="timeline-item relative">
+                        <div class="project-card bg-white p-6 rounded-xl shadow-md border-l-4 border-blue-500">
+                            <div class="flex items-center mb-4">
+                                <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-chart-line text-blue-600 text-xl"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-800">Beginner Projects</h3>
+                            </div>
+                            <p class="text-gray-600 mb-4">Weeks 3-6</p>
+                            <ul class="space-y-3 text-sm">
+                                <li class="flex items-start">
+                                    <span class="bg-blue-200 text-blue-800 font-bold px-2 py-1 rounded text-xs mr-3">W3</span>
+                                    <span>Text Generation Assistant</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="bg-blue-200 text-blue-800 font-bold px-2 py-1 rounded text-xs mr-3">W4</span>
+                                    <span>Image Generation Explorer</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="bg-blue-200 text-blue-800 font-bold px-2 py-1 rounded text-xs mr-3">W5</span>
+                                    <span>Fine-tuning Exploration</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="bg-blue-200 text-blue-800 font-bold px-2 py-1 rounded text-xs mr-3">W6</span>
+                                    <span>Sentiment Analysis System</span>
+                                </li>
+                            </ul>
+                            <button onclick="showDetails('beginner')" class="mt-4 text-blue-600 font-medium hover:text-blue-800 transition duration-300">
+                                View Details <i class="fas fa-chevron-right ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Intermediate Projects -->
+                    <div class="timeline-item relative">
+                        <div class="project-card bg-white p-6 rounded-xl shadow-md border-l-4 border-purple-500">
+                            <div class="flex items-center mb-4">
+                                <div class="bg-purple-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-rocket text-purple-600 text-xl"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-800">Intermediate Projects</h3>
+                            </div>
+                            <p class="text-gray-600 mb-4">Weeks 7-12</p>
+                            <ul class="space-y-3 text-sm">
+                                <li class="flex items-start">
+                                    <span class="bg-purple-200 text-purple-800 font-bold px-2 py-1 rounded text-xs mr-3">W7-8</span>
+                                    <span>Multimodal Question Answering</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="bg-purple-200 text-purple-800 font-bold px-2 py-1 rounded text-xs mr-3">W9-10</span>
+                                    <span>Custom Language Model Training</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="bg-purple-200 text-purple-800 font-bold px-2 py-1 rounded text-xs mr-3">W11-12</span>
+                                    <span>Advanced Conversational Agent</span>
+                                </li>
+                            </ul>
+                            <button onclick="showDetails('intermediate')" class="mt-4 text-purple-600 font-medium hover:text-purple-800 transition duration-300">
+                                View Details <i class="fas fa-chevron-right ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Advanced Projects -->
+                    <div class="timeline-item relative">
+                        <div class="project-card bg-white p-6 rounded-xl shadow-md border-l-4 border-red-500">
+                            <div class="flex items-center mb-4">
+                                <div class="bg-red-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-crown text-red-600 text-xl"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-800">Advanced Projects</h3>
+                            </div>
+                            <p class="text-gray-600 mb-4">Weeks 13-20</p>
+                            <ul class="space-y-3 text-sm">
+                                <li class="flex items-start">
+                                    <span class="bg-red-200 text-red-800 font-bold px-2 py-1 rounded text-xs mr-3">W13-15</span>
+                                    <span>Custom RAG System</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="bg-red-200 text-red-800 font-bold px-2 py-1 rounded text-xs mr-3">W16-17</span>
+                                    <span>AI Agent with Tool Use</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="bg-red-200 text-red-800 font-bold px-2 py-1 rounded text-xs mr-3">W18-20</span>
+                                    <span>Document Understanding System</span>
+                                </li>
+                            </ul>
+                            <button onclick="showDetails('advanced')" class="mt-4 text-red-600 font-medium hover:text-red-800 transition duration-300">
+                                View Details <i class="fas fa-chevron-right ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Expert Projects Row -->
+                <div class="mt-8 grid grid-cols-1">
+                    <div class="timeline-item relative">
+                        <div class="project-card bg-white p-6 rounded-xl shadow-md border-l-4 border-indigo-500">
+                            <div class="flex items-center mb-4">
+                                <div class="bg-indigo-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-star text-indigo-600 text-xl"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-800">Expert Projects</h3>
+                            </div>
+                            <p class="text-gray-600 mb-4">Weeks 21-30</p>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                <div>
+                                    <h4 class="font-semibold text-gray-700 mb-2">Weeks 21-24</h4>
+                                    <p class="text-sm text-gray-600">Multi-Agent Collaborative System</p>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-700 mb-2">Weeks 25-27</h4>
+                                    <p class="text-sm text-gray-600">Model Optimization and Deployment</p>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-700 mb-2">Weeks 28-30</h4>
+                                    <p class="text-sm text-gray-600">AI Research Assistant System</p>
+                                </div>
+                            </div>
+                            <button onclick="showDetails('expert')" class="mt-4 text-indigo-600 font-medium hover:text-indigo-800 transition duration-300">
+                                View Details <i class="fas fa-chevron-right ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Details Modal -->
+    <div id="project-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-xl p-8 max-w-4xl w-full max-h-[80vh] overflow-y-auto">
+            <div class="flex justify-between items-center mb-6">
+                <h3 id="modal-title" class="text-2xl font-bold text-gray-800"></h3>
+                <button onclick="hideModal()" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <div id="modal-content" class="space-y-6">
+                <!-- Content will be inserted here by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Strategies Section -->
+    <section id="strategies" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Success Strategies and Best Practices</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Learning Effectiveness -->
+                <div class="bg-indigo-50 p-6 rounded-xl shadow-md">
+                    <div class="bg-indigo-100 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-graduation-cap text-indigo-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-3 text-gray-800">Learning Effectiveness</h3>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-indigo-500 mt-1 mr-2"></i>
+                            <span>Active Recall: Regularly quiz yourself on concepts</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-indigo-500 mt-1 mr-2"></i>
+                            <span>Spaced Repetition: Review challenging concepts</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-indigo-500 mt-1 mr-2"></i>
+                            <span>Teaching Practice: Explain concepts to others</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-indigo-500 mt-1 mr-2"></i>
+                            <span>Deliberate Practice: Focus on specific skills</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-indigo-500 mt-1 mr-2"></i>
+                            <span>Immediate Application: Apply new concepts</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Project Management -->
+                <div class="bg-blue-50 p-6 rounded-xl shadow-md">
+                    <div class="bg-blue-100 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-tasks text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-3 text-gray-800">Project Management</h3>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
+                            <span>Version Control: Use Git with meaningful commits</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
+                            <span>Documentation First: Document before implementing</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
+                            <span>Test-Driven Development: Create tests first</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
+                            <span>Incremental Development: Build MVPs first</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
+                            <span>Regular Refactoring: Schedule code improvement</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Wellness -->
+                <div class="bg-green-50 p-6 rounded-xl shadow-md">
+                    <div class="bg-green-100 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-heartbeat text-green-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-3 text-gray-800">Physical & Mental Wellness</h3>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Exercise: 30 minutes of activity daily</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Sleep: 7-8 hours of quality sleep</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Nutrition: Brain-healthy meals and snacks</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Mindfulness: 10-15 minutes meditation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Social Connection: Regular peer interactions</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Progress Tracking -->
+                <div class="bg-purple-50 p-6 rounded-xl shadow-md">
+                    <div class="bg-purple-100 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-chart-line text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-3 text-gray-800">Progress Tracking</h3>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-purple-500 mt-1 mr-2"></i>
+                            <span>Weekly Reviews: Document progress</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-purple-500 mt-1 mr-2"></i>
+                            <span>Monthly Assessments: Evaluate skill development</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-purple-500 mt-1 mr-2"></i>
+                            <span>Project Portfolio: Document completed projects</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-purple-500 mt-1 mr-2"></i>
+                            <span>Knowledge Repository: Personal wiki of concepts</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-purple-500 mt-1 mr-2"></i>
+                            <span>Learning Journal: Record insights daily</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Essential Resources</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Documentation -->
+                <div class="bg-white rounded-xl p-6 shadow-md">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-indigo-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-book text-indigo-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-indigo-800">Documentation & Reference</h3>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-indigo-500 mr-3"></i>
+                            <span>Hugging Face Documentation</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-indigo-500 mr-3"></i>
+                            <span>OpenAI API Documentation</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-indigo-500 mr-3"></i>
+                            <span>PyTorch and TensorFlow Guides</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-indigo-500 mr-3"></i>
+                            <span>LangChain Documentation</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-indigo-500 mr-3"></i>
+                            <span>Diffusers Library Reference</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Learning Platforms -->
+                <div class="bg-white rounded-xl p-6 shadow-md">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-laptop text-blue-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-blue-800">Learning Platforms</h3>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-blue-500 mr-3"></i>
+                            <span>Coursera (Deep Learning Specialization)</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-blue-500 mr-3"></i>
+                            <span>Fast.ai Practical Deep Learning</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-blue-500 mr-3"></i>
+                            <span>Hugging Face Courses</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-blue-500 mr-3"></i>
+                            <span>Papers with Code</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-blue-500 mr-3"></i>
+                            <span>ArXiv ML/AI Papers</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Tools & Models -->
+                <div class="bg-white rounded-xl p-6 shadow-md">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-purple-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-tools text-purple-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-purple-800">Tools & Model Resources</h3>
+                    </div>
+                    <div class="grid grid-cols-1 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-gray-700 mb-2">Development Tools</h4>
+                            <ul class="space-y-2 text-sm">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-purple-500 mr-2"></i>
+                                    <span>VS Code with Python extensions</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-purple-500 mr-2"></i>
+                                    <span>Jupyter Notebooks</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-purple-500 mr-2"></i>
+                                    <span>Google Colab / Kaggle Notebooks</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-700 mb-2">Model Resources</h4>
+                            <ul class="space-y-2 text-sm">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-purple-500 mr-2"></i>
+                                    <span>Hugging Face Model Hub</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-purple-500 mr-2"></i>
+                                    <span>OpenAI Models</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-purple-500 mr-2"></i>
+                                    <span>Meta's Open Source Models</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="gradient-bg text-white py-16">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-6">Start Your Gen AI Journey Today</h2>
+            <p class="text-xl max-w-2xl mx-auto mb-8">Download the complete 30-week curriculum with detailed project plans and resources.</p>
+            <button class="bg-white text-indigo-700 font-bold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-300">
+                Download Full Curriculum <i class="fas fa-download ml-2"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- Floating Action Button -->
+    <div class="fixed bottom-8 right-8">
+        <button class="floating-btn bg-indigo-600 text-white p-4 rounded-full shadow-lg hover:bg-indigo-700 transition duration-300">
+            <i class="fas fa-question text-xl"></i>
+        </button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <i class="fas fa-robot text-2xl mr-3"></i>
+                    <span class="text-xl font-bold">Gen AI Learning Path</span>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="hover:text-indigo-300"><i class="fab fa-twitter text-xl"></i></a>
+                    <a href="#" class="hover:text-indigo-300"><i class="fab fa-github text-xl"></i></a>
+                    <a href="#" class="hover:text-indigo-300"><i class="fab fa-discord text-xl"></i></a>
+                    <a href="#" class="hover:text-indigo-300"><i class="fab fa-linkedin text-xl"></i></a>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-6 pt-6 text-center text-gray-400">
+                <p>&copy; 2023 Gen AI Learning Path. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Animate progress bar on scroll
+        window.addEventListener('scroll', function() {
+            const progressBar = document.getElementById('progress-level');
+            const scrollPosition = window.scrollY;
+            const pageHeight = document.body.scrollHeight - window.innerHeight;
+            const scrollPercentage = (scrollPosition / pageHeight) * 100;
+            
+            progressBar.style.width = scrollPercentage + '%';
+        });
+
+        // Project details modal
+        function showDetails(level) {
+            const modal = document.getElementById('project-modal');
+            const title = document.getElementById('modal-title');
+            const content = document.getElementById('modal-content');
+            
+            // Set title based on level
+            if (level === 'foundation') {
+                title.textContent = 'Foundation Phase (Weeks 1-2)';
+                content.innerHTML = `
+                    <div class="space-y-4">
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <h4 class="font-bold text-lg text-green-800 mb-2">Week 1: Environment Setup and API Foundations</h4>
+                            <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                                <li><strong>Monday-Tuesday:</strong> Install frameworks, set up environments, create API accounts</li>
+                                <li><strong>Wednesday-Thursday:</strong> Learn API authentication and basic calls</li>
+                                <li><strong>Friday:</strong> Develop command-line interface for API interactions</li>
+                                <li><strong>Weekend Review:</strong> Consolidate notes on API best practices</li>
+                            </ul>
+                        </div>
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <h4 class="font-bold text-lg text-green-800 mb-2">Week 2: Prompt Engineering Fundamentals</h4>
+                            <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                                <li><strong>Monday-Tuesday:</strong> Study principles and experiment with parameters</li>
+                                <li><strong>Wednesday-Thursday:</strong> Implement chain-of-thought prompting</li>
+                                <li><strong>Friday:</strong> Build prompt template system for different use cases</li>
+                                <li><strong>Weekend Review:</strong> Document best performing prompt patterns</li>
+                            </ul>
+                        </div>
+                    </div>
+                `;
+            } else if (level === 'beginner') {
+                title.textContent = 'Beginner Projects Phase (Weeks 3-6)';
+                content.innerHTML = `
+                    <div class="space-y-4">
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h4 class="font-bold text-lg text-blue-800 mb-2">Week 3: Text Generation Assistant</h4>
+                            <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                                <li><strong>Monday:</strong> Design architecture and user flow</li>
+                                <li><strong>Tuesday-Wednesday:</strong> Implement core text generation</li>
+                                <li><strong>Thursday:</strong> Create error handling mechanisms</li>
+                                <li><strong>Friday:</strong> Build simple UI and complete testing</li>
+                                <li><strong>Weekend Review:</strong> Test with different prompts and scenarios</li>
+                            </ul>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h4 class="font-bold text-lg text-blue-800 mb-2">Week 4: Image Generation Explorer</h4>
+                            <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                                <li><strong>Monday:</strong> Learn diffusion models fundamentals</li>
+                                <li><strong>Tuesday-Wednesday:</strong> Create prompt templates for images</li>
+                                <li><strong>Thursday:</strong> Implement image variation capabilities</li>
+                                <li><strong>Friday:</strong> Build basic UI for image generation</li>
+                                <li><strong>Weekend Review:</strong> Create gallery of successful generations</li>
+                            </ul>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h4 class="font-bold text-lg text-blue-800 mb-2">Week 5: Fine-tuning Exploration</h4>
+                            <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                                <li><strong>Monday:</strong> Learn fine-tuning principles</li>
+                                <li><strong>Tuesday-Wednesday:</strong> Prepare custom training dataset</li>
+                                <li><strong>Thursday:</strong> Execute fine-tuning on small model</li>
+                                <li><strong>Friday:</strong> Deploy fine-tuned model</li>
+                                <li><strong>Weekend Review:</strong> Document fine-tuning process</li>
+                            </ul>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h4 class="font-bold text-lg text-blue-800 mb-2">Week 6: Sentiment Analysis System</h4>
+                            <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                                <li><strong>Monday:</strong> Research sentiment analysis approaches</li>
+                                <li><strong>Tuesday-Wednesday:</strong> Implement text preprocessing</li>
+                                <li><strong>Thursday:</strong> Create visualization components</li>
+                                <li><strong>Friday:</strong> Build dashboard for sentiment tracking</li>
+                                <li><strong>Weekend Milestone Review:</strong> Comprehensive review of beginner phase</li>
+                            </ul>
+                        </div>
+                    </div>
+                `;
+            } else if (level === 'intermediate') {
+                title.textContent = 'Intermediate Projects Phase (Weeks 7-12)';
+                content.innerHTML = `
+                    <div class="space-y-4">
+                        <div class="bg-purple-50 p-4 rounded-lg">
+                            <h4 class="font-bold text-lg text-purple-800 mb-2">Weeks 7-8: Multimodal Question Answering System</h4>
+                            <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                                <li><strong>Week 7:</strong> Study multimodal architecture, set up image processing</li>
+                                <li><strong>Week 8:</strong> Create QA system for images, implement confidence scoring</li>
+                                <li><strong>Weekend Review:</strong> Test with diverse image-question pairs</li>
+                            </ul>
+                        </div>
+                        <div class="bg-purple-50 p-4 rounded-lg">
+                            <h4 class="font-bold text-lg text-purple-800 mb-2">Weeks 9-10: Custom Language Model Training</h4>
+                            <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                                <li><strong>Week 9:</strong> Design training approach, collect specialized data</li>
+                                <li><strong>Week 10:</strong> Configure model architecture, execute training</li>
+                                <li><strong>Weekend Review:</strong> Create inference API for custom model</li>
+                            </ul>
+                        </div>
+                        <div class="bg-purple-50 p-4 rounded-lg">
+                            <h4 class="font-bold text-lg text-purple-800 mb-2">Weeks 11-12: Advanced Conversational Agent</h4>
+                            <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                                <li><strong>Week 11:</strong> Design conversation memory architecture</li>
+                                <li><strong>Week 12:</strong> Develop conversation flow management</li>
+                                <li><strong>Weekend Milestone Review:</strong> End-to-end testing with complex conversations</li>
+                            </ul>
+                        </div>
+                    </div>
+                `;
+            } else if (level === 'advanced') {
+                title.textContent = 'Advanced Projects Phase (Weeks 13-20)';
+                content.innerHTML = `
+                    <div class="space-y-4">
+                        <div class="bg-red-50 p-4 rounded-lg">
+                            <h4 class="font-bold text-lg text-red-800 mb-2">Weeks 13-15: Custom RAG System</h4>
+                            <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                                <li><strong>Week 13:</strong> Design document processing architecture</li>
+                                <li><strong>Week 14:</strong> Develop semantic search functionality</li>
+                                <li><strong>Week 15:</strong> Build response generation with citations</li>
+                                <li><strong>Weekend Review:</strong> Benchmark search quality and accuracy</li>
+                            </ul>
+                        </div>
+                        <div class="bg-red-50 p-4 rounded-lg">
+                            <h4 class="font-bold text-lg text-red-800 mb-2">Weeks 16-17: AI Agent with Tool Use</h4>
+                            <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                                <li><strong>Week 16:</strong> Design agent architecture and capabilities</li>
+                                <li><strong>Week 17:</strong> Develop tool selection and execution</li>
+                                <li><strong>Weekend Review:</strong> Test with complex multi-step tasks</li>
+                            </ul>
+                        </div>
+                        <div class="bg-red-50 p-4 rounded-lg">
+                            <h4 class="font-bold text-lg text-red-800 mb-2">Weeks 18-20: Document Understanding System</h4>
+                            <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                                <li><strong>Week 18:</strong> Design document processing pipeline</li>
+                                <li><strong>Week 19:</strong> Develop information extraction system</li>
+                                <li><strong>Week 20:</strong> Build QA system over documents</li>
+                                <li><strong>Weekend Milestone Review:</strong> Test with diverse document types</li>
+                            </ul>
+                        </div>
+                    </div>
+                `;
+            } else if (level === 'expert') {
+                title.textContent = 'Expert Projects Phase (Weeks 21-30)';
+                content.innerHTML = `
+                    <div class="space-y-4">
+                        <div class="bg-indigo-50 p-4 rounded-lg">
+                            <h4 class="font-bold text-lg text-indigo-800 mb-2">Weeks 21-24: Multi-Agent Collaborative System</h4>
+                            <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                                <li><strong>Week 21:</strong> Research multi-agent architectures</li>
+                                <li><strong>Week 22:</strong> Implement agent communication protocols</li>
+                                <li><strong>Week 23:</strong> Develop consensus and conflict resolution</li>
+                                <li><strong>Week 24:</strong> Implement performance monitoring</li>
+                                <li><strong>Weekend Review:</strong> Test with complex collaborative tasks</li>
+                            </ul>
+                        </div>
+                        <div class="bg-indigo-50 p-4 rounded-lg">
+                            <h4 class="font-bold text-lg text-indigo-800 mb-2">Weeks 25-27: Model Optimization and Deployment</h4>
+                            <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                                <li><strong>Week 25:</strong> Research optimization techniques</li>
+                                <li><strong>Week 26:</strong> Create inference optimization pipeline</li>
+                                <li><strong>Week 27:</strong> Build monitoring and analytics system</li>
+                                <li><strong>Weekend Review:</strong> Benchmark performance improvements</li>
+                            </ul>
+                        </div>
+                        <div class="bg-indigo-50 p-4 rounded-lg">
+                            <h4 class="font-bold text-lg text-indigo-800 mb-2">Weeks 28-30: AI Research Assistant System</h4>
+                            <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                                <li><strong>Week 28:</strong> Design research assistant architecture</li>
+                                <li><strong>Week 29:</strong> Create knowledge extraction and linking</li>
+                                <li><strong>Week 30:</strong> Implement insight generation</li>
+                                <li><strong>Final Milestone Review:</strong> Comprehensive evaluation of all systems</li>
+                            </ul>
+                        </div>
+                    </div>
+                `;
+            }
+            
+            modal.classList.remove('hidden');
+        }
+
+        function hideModal() {
+            const modal = document.getElementById('project-modal');
+            modal.classList.add('hidden');
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
